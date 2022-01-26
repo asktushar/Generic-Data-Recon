@@ -37,7 +37,7 @@ class ComplaintReport(argConf: ArgConf,
     targetHandler.writeFinalDF(complaintsReport, argConf.complaintsReportPath)
   } catch {
     case e: Throwable =>
-      logger.warn(s"Something went wrong! Exception: ", e)
+      logger.error(s"Something went wrong! Exception: ", e)
   } finally {
     spark.sparkContext.stop()
     spark.stop()

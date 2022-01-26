@@ -14,7 +14,7 @@ class SourceHandler {
     } catch {
       case e: FileNotFoundException =>
         logger.warn(s"File $filePath Not found: ", e)
-        throw new FileNotFoundException()
+        throw new FileNotFoundException(s"File $filePath Not found: ")
     }
   }
   def readMultilineJSONFile(spark: SparkSession, filePath : String) : DataFrame = {
@@ -23,7 +23,7 @@ class SourceHandler {
     } catch {
       case e: FileNotFoundException =>
         logger.warn(s"File $filePath Not found: ", e)
-        throw new FileNotFoundException()
+        throw new FileNotFoundException(s"File $filePath Not found: ")
     }
   }
 }

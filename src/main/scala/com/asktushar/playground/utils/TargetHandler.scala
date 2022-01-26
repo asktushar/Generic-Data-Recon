@@ -17,7 +17,7 @@ class TargetHandler {
     } catch {
       case e : FileNotFoundException =>
         logger.warn(s"File $filePath Not found: ", e)
-        throw new FileNotFoundException()
+        throw new FileNotFoundException(s"File $filePath Not found: ")
     }
   }
 }
