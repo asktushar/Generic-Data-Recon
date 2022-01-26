@@ -12,6 +12,8 @@ class SourceHandlerTest extends WordSpec with Matchers with SparkContextSpec {
   private val categorySourcePath = "src/test/resources/input/category_names.json"
   private val serviceSourcePath = "src/test/resources/input/service_names.json"
 
+  private val incorrectServiceSourcePath = "srcc/test/resources/input/service_names.json"
+
   "Testing SourceHandlerTest for reading correct complaintsSource" in withSparkSession { sparkSession =>
     //Expected DF
     val rowsExpected = sparkSession.sparkContext.parallelize(Seq(
@@ -70,5 +72,4 @@ class SourceHandlerTest extends WordSpec with Matchers with SparkContextSpec {
     assert(actualDF.count() == 1)
     assert(actualDF.select("53014","409").except(expectedDF.select("53014","409")).count() == 0)
   }
-
 }

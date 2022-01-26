@@ -12,18 +12,18 @@ class SourceHandler {
     try {
       spark.read.json(filePath)
     } catch {
-      case e: FileNotFoundException =>
-        logger.warn(s"File $filePath Not found: ", e)
-        throw new FileNotFoundException(s"File $filePath Not found: ")
+      case exception: Exception =>
+        logger.error(s"Error reading file $filePath : ", exception)
+        throw new Exception(s"Error reading file $filePath : ", exception)
     }
   }
   def readMultilineJSONFile(spark: SparkSession, filePath : String) : DataFrame = {
     try {
       spark.read.option("multiline","true").json(filePath)
     } catch {
-      case e: FileNotFoundException =>
-        logger.warn(s"File $filePath Not found: ", e)
-        throw new FileNotFoundException(s"File $filePath Not found: ")
+      case exception: Exception =>
+        logger.error(s"Error reading file $filePath :: ", exception)
+        throw new Exception(s"Error reading file $filePath : ", exception)
     }
   }
 }
