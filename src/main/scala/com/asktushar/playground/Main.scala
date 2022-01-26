@@ -1,6 +1,6 @@
 package com.asktushar.playground
 
-import com.asktushar.playground.conf.ArgConf
+import com.asktushar.playground.config.ArgConf
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.util.{Failure, Success, Try}

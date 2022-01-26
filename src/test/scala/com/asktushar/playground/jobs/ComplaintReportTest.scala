@@ -2,7 +2,7 @@ package com.asktushar.playground.jobs
 
 import com.asktushar.playground.utils.{SourceHandler, TargetHandler}
 import com.asktushar.playground.SparkContextSpec
-import com.asktushar.playground.conf.ArgConf
+import com.asktushar.playground.config.ArgConf
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import org.scalatest.{Matchers, WordSpec}

@@ -18,10 +18,10 @@ possible but generally not necessary and reduces the velocity.
 ```bash
 ComplaintReport
 local[1]
-file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/input/complaints.jsonl
-file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/input/category_names.json
-file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/input/service_names.json
-file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/output
+file:///absoluteFilePath/complaints.jsonl
+file:///absoluteFilePath/category_names.json
+file:///absoluteFilePath/service_names.json
+file:///absoluteFilePath/output
 ```
 
 ## How to test

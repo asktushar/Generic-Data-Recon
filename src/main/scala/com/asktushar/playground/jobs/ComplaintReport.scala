@@ -1,7 +1,7 @@
 package com.asktushar.playground.jobs
 
 import com.asktushar.playground.utils.{SourceHandler, SparkSessionAware, TargetHandler}
-import com.asktushar.playground.conf.ArgConf
+import com.asktushar.playground.config.ArgConf
 import org.apache.spark.sql.functions.broadcast
 import org.apache.spark.sql.DataFrame
 import org.slf4j.{Logger, LoggerFactory}

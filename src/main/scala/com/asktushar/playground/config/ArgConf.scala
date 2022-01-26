@@ -1,4 +1,4 @@
-package com.asktushar.playground.conf
+package com.asktushar.playground.config
 
 case class ArgConf(
                     taskType: String,
