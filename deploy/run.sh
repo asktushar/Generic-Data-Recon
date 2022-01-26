@@ -15,7 +15,7 @@ run() {
   --conf spark.executor.cores=4
   --conf spark.executor.memory=64G
   --conf spark.driver.memory=16G
-  --conf spark.jars.packages=com.asktushar.playground:MyScalaPlayground-0.0.1-SNAPSHOT
+  --conf spark.jars.packages=com.asktushar.playground:complaint-report-1.0
   --conf spark.kubernetes.executor.deleteOnTermination=true
   --conf spark.kubernetes.executor.limit.cores=4
   --conf spark.kubernetes.executor.request.cores=4
@@ -24,7 +24,7 @@ run() {
   --keytab /var/run/secrets/asktushar.com/complaintReport.keytab
   --principal complaintReport@asktushar.COM
   --class com.asktushar.playground.Main
-  MyScalaPlayground-0.0.1-SNAPSHOT.jar taskType master complaintsSourcePath categorySourcePath serviceSourcePath complaintsReportPath
+  complaint-report-1.0.jar taskType master complaintsSourcePath categorySourcePath serviceSourcePath complaintsReportPath
 }
 
 if [ -n "$taskType" ] && [ -n "$master" ] && [ -n "$complaintsSourcePath" ] && [ -n "$categorySourcePath" ] && [ -n "$serviceSourcePath" ] && [ -n "$complaintsReportPath" ]; then
