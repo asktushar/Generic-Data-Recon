@@ -79,7 +79,9 @@ cmake-build-*/
 out/
 
 # output
-output/*.
+output/*
+
+!output/.gitkeep
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
