@@ -4,10 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.asktushar.playground</groupId>
-    <artifactId>complaint-report</artifactId>
+    <artifactId>complaint-report-batch</artifactId>
     <description>MyScalaPlayground is my personal repository for learning purpose</description>
     <version>1.0</version>
     <packaging>jar</packaging>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>maven-booking-snapshots</id>
+            <name>Booking Snapshot Repository</name>
+            <url>https://jfrog.booking.com/artifactory/maven-booking-snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>maven-booking-releases</id>
+            <name>Booking Release Repository</name>
+            <url>https://jfrog.booking.com/artifactory/maven-booking-releases</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
 
@@ -29,6 +43,12 @@
             <groupId>org.rogach</groupId>
             <artifactId>scallop_2.12</artifactId>
             <version>4.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version>
         </dependency>
 
         <!--SPARK LIBS-->
@@ -116,6 +136,9 @@
             <artifactId>kryo</artifactId>
             <version>4.0.2</version>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
@@ -184,46 +207,46 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <relocations>
-                                <relocation>
-                                    <pattern>com.google</pattern>
-                                    <shadedPattern>com.shaded.google</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>io.netty</pattern>
-                                    <shadedPattern>hidden.io.netty</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>okhttp3</pattern>
-                                    <shadedPattern>okhttp3.shaded</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>okio</pattern>
-                                    <shadedPattern>okio.shaded</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.fasterxml.jackson</pattern>
-                                    <shadedPattern>com.shaded.fasterxml.jackson</shadedPattern>
-                                </relocation>
-                            </relocations>
-                            <shadedArtifactAttached>false</shadedArtifactAttached>
-                            <!--<shadedClassifierName>shaded</shadedClassifierName>-->
-                            <!--<minimizeJar>true</minimizeJar>-->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <version>3.2.4</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <relocations>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>com.google</pattern>-->
+<!--                                    <shadedPattern>com.shaded.google</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>io.netty</pattern>-->
+<!--                                    <shadedPattern>hidden.io.netty</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>okhttp3</pattern>-->
+<!--                                    <shadedPattern>okhttp3.shaded</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>okio</pattern>-->
+<!--                                    <shadedPattern>okio.shaded</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>com.fasterxml.jackson</pattern>-->
+<!--                                    <shadedPattern>com.shaded.fasterxml.jackson</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                            </relocations>-->
+<!--                            <shadedArtifactAttached>false</shadedArtifactAttached>-->
+<!--                            &lt;!&ndash;<shadedClassifierName>shaded</shadedClassifierName>&ndash;&gt;-->
+<!--                            &lt;!&ndash;<minimizeJar>true</minimizeJar>&ndash;&gt;-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

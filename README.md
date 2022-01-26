@@ -37,9 +37,9 @@ mvn clean compile install
 ```
 
 
-## How to run
+## How to run on cluster
 Use the below unix script to execute code in cluster
 
 ```bash
-sh deploy/run.sh ComplaintReport local[1] file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/input/complaints.jsonl file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/input/category_names.json file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/input/service_names.json file:///Users/tkesarwani/git_tree/personal/MyScalaPlayground/output
+sh deploy/run.sh ComplaintReport local[1] file:///absoluteFilePath/complaints.jsonl file:///absoluteFilePath/category_names.json file:///absoluteFilePath/service_names.json file:///absoluteFilePath/output
 ```
