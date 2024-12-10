@@ -7,7 +7,7 @@
 Author of the code is Tushar Kesarwani <tushar.kesarwani2@gmail.com>
 
 
-## How to develop
+## How to develop locally
 Develop locally. Tests are good to create mock data and run tests against it. Developing against Hadoop clusters is
 possible but generally not necessary and reduces the velocity.
 
